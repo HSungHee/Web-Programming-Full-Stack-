@@ -1,15 +1,20 @@
-# 인터넷 (Internet)
+
+# 1. 웹 프로그래밍 기초
+========================================
+
+# 1.1 웹의 동작 (HTTP 프로토콜 이해)
+## 인터넷 (Internet)
 
 TCP/IP 기반의 네트워크가 전세계적으로 확대되어 하나로 연결된 네트워크들의 네트워크 (네트워크의 결합체)
 
-# HTTP (Hypertext Transfer Protocol)란?
+## HTTP (Hypertext Transfer Protocol)란?
 
 * 팀 버너스리(Tim Berners-Lee)와 그가 속한 팀은 CERN에서 HTML뿐만 아니라 웹 브라우저 및 웹 브라우저 관련 기술과 HTTP를 발명하였습니다.
 * 문서화된 최초의 HTTP버전은 HTTP v0.9(1991년)입니다.
 * HTTP는 서버와 클라이언트가 인터넷상에서 데이터를 주고받기 위한 프로토콜(protocol)입니다.
 * HTTP는 계속 발전하여 HTTP/2까지 버전이 등장한 상태입니다.
 
-## HTTP 작동방식
+### HTTP 작동방식
 
 클라이언트가 먼저 서버에게 요청을하고, 서버는 클라이언트에게 응답을 보냅니다. 
 
@@ -22,14 +27,14 @@ TCP/IP 기반의 네트워크가 전세계적으로 확대되어 하나로 연�
   - 이러한 특징을 무상태(Stateless)라고 말한다.
   - 이러한 특징 때문에 정보를 유지하기 위해서 Cookie와 같은 기술이 등장하게 되었다.
 
-## URL (Uniform Resource Locator)
+### URL (Uniform Resource Locator)
 
 접근 프로토콜://IP 주소 또는 도메인 이름/문서의 경로/문서이름 (e.g. http://www.sunnyvale.co.kr/docs/index.html)
 
 * 인터넷 상의 자원의 위치
 * 특정 웹 서버의 특정 파일에 접근하기 위한 경로 혹은 주소
 
-## HTTP (Hypertext Transfer Protocol)
+### HTTP (Hypertext Transfer Protocol)
 
 1. connect (Client -> Server)
 2. request (Client -> Server)
@@ -53,5 +58,40 @@ TCP/IP 기반의 네트워크가 전세계적으로 확대되어 하나로 연�
 * OPTIONS : 웹서버가 지원하는 메서드의 종류를 요청한다.
 * TRACE : 클라이언트의 요청을 그대로 반환한다. 예컨데 echo 서비스로 서버 상태를 확인하기 위한 목적으로 주로 사용한다.
 
-# 참고 자료
+## 참고 자료
 HTTP - 위키백과, 우리모두의 백과사전 (https://ko.wikipedia.org/wiki/HTTP)
+
+# 1.2 웹 Front-End와 웹 Back-End Part 1
+## 웹 Front-end
+### 웹 Front-end?
+사용자에게 웹을 통해 다양한 콘텐츠(문서, 동영상, 사진 등)를 제공합니다.
+
+또한, 사용자의 요청(요구사항)에 반응해서 동작합니다.
+
+### 웹 Front-end의 역할
+
+웹콘텐츠를 잘 보여주기 위해 구조를 만들어야 합니다.(신문,책등과 같이) - HTML
+적절한 배치와 일관된 디자인 등을 제공해야 합니다.(보기 좋게) - CSS
+사용자 요청을 잘 반영해야 합니다.(소통하듯이) - Javascript
+
+
+### * HTML 
+
+원하는 문서의 구조를 프로그래밍 언어로 표현해야 합니다.
+
+HTML이라는 것은 그 구조를 잘 표현해 줍니다.
+
+### * 스타일 - CSS
+
+웹페이지를 꾸미기 위해서는 각각의 HTML 태그(문서의 구조를 표현한 각 조각 단위)를 꾸미기 위한 규칙이 필요합니다
+
+CSS는 이를 표현할 수 있는 프로그래밍 언어입니다.
+
+### * 동작 - JavaScript
+
+HTML,CSS를 이리저리 움직이고 변경할 필요가 있을 거예요.
+
+JavaScript가 그걸 해줍니다.
+
+## 참고 자료
+웹프론트엔드 역할 쉽게 알아보기 (https://html-css-js.com/)
