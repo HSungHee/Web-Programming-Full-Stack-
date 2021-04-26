@@ -118,3 +118,104 @@ backend는 정보를 처리하고 저장하며, 요청에 따라 정보를 내�
 웹프론트엔드 역할 쉽게 알아보기 (https://html-css-js.com/)
 
 
+# 1.3 Browser의 동작
+
+## Browser
+
+서버에서 전송한 데이터(HTML과 같은)가 클라이언트에 도착해야 할 곳은 'Browser'입니다.
+
+Browser에는 데이터를 해석해주는 파서와 데이터를 화면에 표현해주는 렌더링엔진이 포함되어 있습니다.
+
+이런 작업의 대부분은 브라우저 내부에서 이뤄지기 때문에 반드시 알아야 하는 것은 아닙니다. 하지만 브라우저의 내부를 이해하면 웹 개발을 하면서 맞닥뜨리는 난해한 문제를 해결할 수 있고, 보다 최적화된 웹개발을 할 수 있습니다.
+
+브라우저는 월드와이드웹(WWW)에서 정보를 검색, 표현하고 탐색하기 위한 소프트웨어입니다.
+
+인터넷에서 특정 정보로 이동할 수 있는 주소 입력창이 있고 서버와 HTTP로 정보를 주고 받을 수 있는 네트워크 모듈도 포함하고 있습니다.
+
+그리고 서버에서 받은 문서(HTML, CSS, Javascript)를 해석하고 실행하여 화면에 표현하기 위한 해석기(Parser)들을 가지고 있습니다.
+
+브라우저마다 서로 다른 엔진을 포함하고 있습니다.
+
+## 참고 자료
+사파리 브라우저에서 처리되는 webkit렌더링엔진의 처리과정 (https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)
+
+How Browsers Work: Behind the scenes of modern web browsers (https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)
+
+
+# 1.4 Browser에서의 웹 개발
+
+## HTML 문서구조
+
+뜯어보자 웹사이트!
+
+    1. 먼저 크롬브라우저가 없다면 설치하기
+    2. 크롬 브라우저를 열고 크롬 개발자도구 열기
+    3. 윈도우 (Ctrl + Shift + I)
+       맥(Option + Command + i)
+    4. 접속 : http://www.amazon.com
+
+
+## 알게 된 몇 가지 특징
+
+    * HTML문서는 html이라는 태그로 시작해서 html태그로 끝납니다.
+    * head는 무엇을 하는 걸까요? html 문서의 추가적인 설명을 담고있다
+    * body는 무엇을 하는 걸까요? 화면에 표현될 <div> 등을 포함
+    * HTML은 계층적입니다.
+    * HTML은 tag를 사용해서 표현합니다.
+
+```
+<tag class="title">안녕하세요</tag>
+```
+
+JavaScript와 CSS가 html 안에 여기저기 존재합니다.
+
+```
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>저를소개해요</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/start.js"></script>
+  </head>
+  <body>
+    <h1>안녕하세요</h1>
+    <div>코드스쿼드 크롱이라고 합니다</div>
+    <script src="js/library.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+  <script>
+    console.log("javascript code...");
+  </script>
+</html>
+```
+
+JavaScript 코드는 body 태그 닫히기 전에 위치하는 것이 렌더링을 방해하지 않아도 좋고, css코드는 head 안에 위치해서 렌더링 처리 시에 브라우저가 더 빨리 참고할 수 있게 하는 것이 좋습니다.
+
+## 참고 자료
+웹에서 html, css, javascript를 쉽게 테스트할 수 있는 웹사이트 (http://jsbin.com/?html,output)
+
+
+# 1.5 웹서버
+
+웹 브라우저를 실행한 후 주소 입력창에 URL 주소를 입력하면, 그 URL주소에 해당하는 결과물이 화면에 보입니다.
+
+우리가 현실에서 주소를 보고 집을 찾아가는 것처럼, 웹 브라우저는 URL 주소에 해당하는 웹서버(Web Server)에 연결하고, 해당 주소에서 볼 수 있는 내용을 읽어 들여 보여주게 됩니다.
+
+## 웹 서버란?
+
+* 웹 서버는 소프트웨어(Software)를 보통 말하지만, 웹 서버 소프트웨어가 동작하는 컴퓨터를 말합니다.
+* 웹 서버의 가장 중요한 기능은 클라이언트(Client)가 요청하는 HTML 문서나 각종 리소스(Resource)를 전달하는 것입니다.
+* 웹 브라우저나 웹 크롤러가 요청하는 리소스는 컴퓨터에 저장된 정적(static)인 데이터이거나 동적인 결과가 될 수 있습니다.
+ 
+
+## 웹 서버 소프트웨어의 종류
+
+* 가장 많이 사용하는 웹 서버는 Apache, Nginx, Microsoft IIS
+* Apache웹 서버는 Apache Software Foundation에서 개발한 웹서버로 오픈소스 소프트웨어(Open-sourceSoftware)이며, 거의 대부분 운영체제에서 설치 및 사용을 할 수 있습니다.
+* Nginx는 차세대 웹서버로 불리며 더 적은 자원으로 더 빠르게 데이터를 서비스하는 것을 목적으로 만들어진 서버이며   Apache웹 서버와 마찬가지로 오픈소스 소프트웨어입니다.
+
+## 참고 자료
+웹서버, 위키백과 (https://ko.wikipedia.org/wiki/%EC%9B%B9_%EC%84%9C%EB%B2%84)
+
