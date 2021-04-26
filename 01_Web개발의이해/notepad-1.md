@@ -60,7 +60,7 @@ TCP/IP 기반의 네트워크가 전세계적으로 확대되어 하나로 연�
 * TRACE : 클라이언트의 요청을 그대로 반환한다. 예컨데 echo 서비스로 서버 상태를 확인하기 위한 목적으로 주로 사용한다.
 
 ## 참고 자료
-HTTP - 위키백과, 우리모두의 백과사전 (https://ko.wikipedia.org/wiki/HTTP)
+HTTP, 위키백과 - https://ko.wikipedia.org/wiki/HTTP
 
 
 # 1.2 웹 Front-End와 웹 Back-End
@@ -115,7 +115,7 @@ backend는 정보를 처리하고 저장하며, 요청에 따라 정보를 내�
 * DBMS에 대한 이해와 사용방법(예: MySQL, Oracle 등)
 
 ## 참고 자료
-웹프론트엔드 역할 쉽게 알아보기 (https://html-css-js.com/)
+웹프론트엔드 역할 쉽게 알아보기 - https://html-css-js.com/
 
 
 # 1.3 Browser의 동작
@@ -137,9 +137,9 @@ Browser에는 데이터를 해석해주는 파서와 데이터를 화면에 표�
 브라우저마다 서로 다른 엔진을 포함하고 있습니다.
 
 ## 참고 자료
-사파리 브라우저에서 처리되는 webkit렌더링엔진의 처리과정 (https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)
+사파리 브라우저에서 처리되는 webkit렌더링엔진의 처리과정 - https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/
 
-How Browsers Work: Behind the scenes of modern web browsers (https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)
+How Browsers Work: Behind the scenes of modern web browsers - https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/
 
 
 # 1.4 Browser에서의 웹 개발
@@ -194,7 +194,7 @@ JavaScript와 CSS가 html 안에 여기저기 존재합니다.
 JavaScript 코드는 body 태그 닫히기 전에 위치하는 것이 렌더링을 방해하지 않아도 좋고, css코드는 head 안에 위치해서 렌더링 처리 시에 브라우저가 더 빨리 참고할 수 있게 하는 것이 좋습니다.
 
 ## 참고 자료
-웹에서 html, css, javascript를 쉽게 테스트할 수 있는 웹사이트 (http://jsbin.com/?html,output)
+웹에서 html, css, javascript를 쉽게 테스트할 수 있는 웹사이트 - http://jsbin.com/?html,output
 
 
 # 1.5 웹서버
@@ -209,6 +209,9 @@ JavaScript 코드는 body 태그 닫히기 전에 위치하는 것이 렌더링�
 * 웹 서버의 가장 중요한 기능은 클라이언트(Client)가 요청하는 HTML 문서나 각종 리소스(Resource)를 전달하는 것입니다.
 * 웹 브라우저나 웹 크롤러가 요청하는 리소스는 컴퓨터에 저장된 정적(static)인 데이터이거나 동적인 결과가 될 수 있습니다.
  
+## 웹 크롤러
+
+네이버나 구글 같은 검색 사이트에서 다른 웹사이트 정보를 읽어나갈 때 사용하는 소프트웨어
 
 ## 웹 서버 소프트웨어의 종류
 
@@ -217,5 +220,34 @@ JavaScript 코드는 body 태그 닫히기 전에 위치하는 것이 렌더링�
 * Nginx는 차세대 웹서버로 불리며 더 적은 자원으로 더 빠르게 데이터를 서비스하는 것을 목적으로 만들어진 서버이며   Apache웹 서버와 마찬가지로 오픈소스 소프트웨어입니다.
 
 ## 참고 자료
-웹서버, 위키백과 (https://ko.wikipedia.org/wiki/%EC%9B%B9_%EC%84%9C%EB%B2%84)
+웹서버, 위키백과 - https://ko.wikipedia.org/wiki/%EC%9B%B9_%EC%84%9C%EB%B2%84
 
+Apache HTTP Server Project - https://httpd.apache.org/
+
+nginx - https://nginx.org/en/
+
+
+# 1.6 WAS (Web Application Server)
+
+## WAS (Web Application Server)
+WAS는 일종의 미들웨어로 웹 클라이언트(보통 웹 브라우저)의 요청 중 웹 애플리케이션이 동작하도록 지원하는 목적을 가집니다.
+
+## 웹 서버 vs WAS
+    * WAS도 보통 자체적으로 웹 서버 기능을 내장하고 있습니다.
+    * 현재는 WAS가 가지고 있는 웹 서버도 정적인 콘텐츠를 처리하는 데 있어서 성능상 큰 차이가 없습니다.
+    * 규모가 커질수록 웹 서버와 WAS를 분리합니다.
+    * 자원 이용의 효율성 및 장애 극복, 배포 및 유지보수의 편의성을 위해 웹서버와 WAS를 대체로 분리합니다.
+
+## 클라이언트/서버 구조
+
+클라이언트(Client)는 서비스(Service)를 제공하는 서버(Server)에게 정보를 요청하여 응답 받은 결과를 사용합니다.
+
+## DBMS (DataBase Management System)
+
+다수의 사용자가 데이터베이스 내의 데이터에 접근할 수 있도록 해주는 소프트웨어입니다.
+
+## 미들웨어 (MiddleWare)
+
+클라이언트 쪽에 비즈니스 로직이 많을 경우, 클라이언트 관리(배포 등)로 인해 비용이 많이 발생하는 문제가 있습니다.
+
+비즈니스 로직을 클라이언트와 DBMS사이의 미들웨어 서버에서 동작하도록 함으로써 클라이언트는 입력과 출력만 담당하도록 합니다.
