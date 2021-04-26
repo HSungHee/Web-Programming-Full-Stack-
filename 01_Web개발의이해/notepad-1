@@ -24,10 +24,17 @@ HTTP 작동방식
 
 URL (Uniform Resource Locator)
 
+접근 프로토콜://IP 주소 또는 도메인 이름/문서의 경로/문서이름 (e.g. http://www.sunnyvale.co.kr/docs/index.html)
+
 * 인터넷 상의 자원의 위치
 * 특정 웹 서버의 특정 파일에 접근하기 위한 경로 혹은 주소
 
 HTTP (Hypertext Transfer Protocol)
+
+1. connect (Client -> Server)
+2. request (Client -> Server)
+3. response (Server -> Client)
+4. close (Client -> Server)
 
 * 요청 메서드 : GET, PUT, POST, PUSH, OPTIONS 등의 요청 방식이 온다.
 * 요청 URI : 요청하는 자원의 위치를 명시한다.
