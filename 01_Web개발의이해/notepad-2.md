@@ -1,8 +1,13 @@
 # HTML
 
-## 2.1 HTML tags
+===============================
 
-### HTML tag의 종류
+# 2.1 HTML tags
+
+HTML 태그는 많은 종류를 가지고 있고 각각의 쓰임새에 대한 정확한 의미가 있습니다.
+'각각의 의미를 지닌다'는 것을 'Semantic한 태그' 혹은 'Semantic하다'라는 표현을 하곤 합니다.
+
+## HTML tag의 종류
 
 태그는 그 의미에 맞춰서 사용해야 합니다.
 
@@ -44,5 +49,23 @@ div 태그는 block 엘리먼트라고 하는데 일반적인 영역을 표현�
 </html>
 ```
 
-## 참고자료
+### 참고자료
 HTML Element Reference - https://www.w3schools.com/tags/ref_byfunc.asp
+
+
+# 2.2 HTML Layout tags
+
+## 레이아웃을 위한 태그
+
+레이아웃을 구성하는 태그도 역시 그 의미에 맞춰서 사용됩니다. 
+
+* header
+* section
+* nav
+* footer
+* aside
+
+html태그는 레이아웃을 할 때도 그 의미에 맞는 것을 찾아 사용해야 검색도 더 잘되고, 가독성 있는 코드를 만들 수 있게 됩니다. 
+
+### 참고자료
+Standard HTML5 Semantic Layout - https://gist.github.com/thomd/9220049
