@@ -67,5 +67,34 @@ HTML Element Reference - https://www.w3schools.com/tags/ref_byfunc.asp
 
 html태그는 레이아웃을 할 때도 그 의미에 맞는 것을 찾아 사용해야 검색도 더 잘되고, 가독성 있는 코드를 만들 수 있게 됩니다. 
 
+### 실습코드
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+  <header>header</header>
+  <div id="container"> 
+    <nav><ul>
+      <li>home</li>
+      <li>news</li>
+      <li>sports</li>
+    </ul></nav>
+    <aside><ul>
+      <li>logout</li>
+      <li>weather</li>
+      <li>luck</li>
+    </ul></aside>
+  </div>
+  <footer>footer</footer>
+</body>
+</html>
+```
+
+
 ### 참고자료
 Standard HTML5 Semantic Layout - https://gist.github.com/thomd/9220049
