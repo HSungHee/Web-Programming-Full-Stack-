@@ -21,23 +21,29 @@ JDK는 Oracle사이트에서 무료로 다운로드하여 설치할 수 있습�
 브라우저로 다음의 URL을 입력하여 이동합니다.
 http://www.oracle.com/technetwork/java/index.html
 
+![Screen Shot 2021-05-05 at 9 39 37 PM](https://user-images.githubusercontent.com/22373060/117142367-95ac9480-adea-11eb-95da-396a26f32460.png)
 
 "Java SE"를 클릭합니다.
+
+![Screen Shot 2021-05-05 at 9 39 49 PM](https://user-images.githubusercontent.com/22373060/117142385-9ba27580-adea-11eb-843a-72388eed03c7.png)
 
 JDK 최신버전은 9입니다.
 그런데, 현재 가장 많이 사용되는 버전은 8입니다.
 본 과정에서는 JDK8을 사용하도록 하겠습니다.
 위의 그림과 같이 스크롤을 내려 "Java SE OOO/OOOO" 부분에 있는 "JDK Download" 버튼을 클릭합니다.
 
-JDK를 다운로드 받으려면 먼저 라이센스(License)에 동의해야합니다.
-"Accept License Agreement" 앞에 있는 레디오 버튼을 클릭합니다.
+![Screen Shot 2021-05-05 at 9 40 02 PM](https://user-images.githubusercontent.com/22373060/117142465-b2e16300-adea-11eb-9cd9-bad49c02f200.png)
 
 본인이 사용하는 운영체제에 맞는 JDK를 다운로드 해야합니다.
 맥운영체제를 사용한다면 MacOS에 해당하는 "jdk-8u151-macosx-x64.dmg"를 클릭하고, MS윈도우 32비트 운영체제를 사용한다면 "jdk-8u151-windows-i586.exe"를 클릭하여 다운로드 받습니다.
 참고로 MS윈도우 64비트 운영체제의 경우에는 "jdk-8u151-windows-x64.exe"를 다운로드 받습니다.
 
+![Screen Shot 2021-05-05 at 9 42 16 PM](https://user-images.githubusercontent.com/22373060/117142541-ca205080-adea-11eb-87d1-646a41b771fe.png)
+
 다운받은 MS Widnows 64bit용 JDK "jdk-8u151-windows-x64.exe"파일을 더블클릭하여 실행하면 위의 그림과 같은 환영 메시지가 보여집니다.
 Next버튼을 클릭합니다.
+
+![Screen Shot 2021-05-05 at 9 42 21 PM](https://user-images.githubusercontent.com/22373060/117142559-ce4c6e00-adea-11eb-9833-de75a7859a25.png)
 
 JDK가 설치될 경로(Path)를 지정합니다.
 JDK가 설치되는 경로를 JAVA_HOME경로라고도 말합니다.
@@ -45,11 +51,17 @@ JDK가 설치되는 경로를 JAVA_HOME경로라고도 말합니다.
 환경설정을 할 때 알아야 합니다.
 Next버튼을 클릭합니다.
 
+![Screen Shot 2021-05-05 at 9 42 52 PM](https://user-images.githubusercontent.com/22373060/117142609-ddcbb700-adea-11eb-9554-c69e67c0d5fd.png)
+
 JDK설치가 끝나면 JRE가 설치될 경로를 설정하게 됩니다.
 Next버튼을 클릭합니다.
 
+![Screen Shot 2021-05-05 at 9 42 58 PM](https://user-images.githubusercontent.com/22373060/117142633-e15f3e00-adea-11eb-96ee-d51e32e44121.png)
+
 설치가 진행되고 있습니다.
 잠시만 기다려 주세요.
+
+![Screen Shot 2021-05-05 at 9 43 15 PM](https://user-images.githubusercontent.com/22373060/117142676-eb813c80-adea-11eb-888e-0d6618bc7094.png)
 
 설치가 완료되었습니다.
 
@@ -94,24 +106,40 @@ JAVA_HOME, CLASSPATH는 시스템 환경변수에 새롭게 추가될 환경 변
 
 MS Windows 10에서 JDK 관련된 환경변수를 설정해 보도록 하겠습니다.
 
+![Screen Shot 2021-05-05 at 9 43 49 PM](https://user-images.githubusercontent.com/22373060/117142728-ff2ca300-adea-11eb-91de-421d34ba210b.png)
+
 찾기 버튼을 누른 다음에 "시스템 환" 까지 입력합니다.
 그러면 검색 결과에 "시스템 환경 변수 편집"이라는 결과가 보여질 것입니다.
 "시스템 환경 변수 편집"을 선택합니다.
 
+![Screen Shot 2021-05-05 at 9 44 05 PM](https://user-images.githubusercontent.com/22373060/117142754-08b60b00-adeb-11eb-8240-bfd9feaa2b5e.png)
+
 창이 열리면 "환경변수" 버튼을 클릭합니다.
 
+![Screen Shot 2021-05-05 at 9 44 21 PM](https://user-images.githubusercontent.com/22373060/117142790-1370a000-adeb-11eb-9b60-7789c628dfcc.png)
+
 시스템 변수 영역의 "새로 만들기"버튼을 클릭합니다.
+
+![Screen Shot 2021-05-05 at 9 44 40 PM](https://user-images.githubusercontent.com/22373060/117142929-3a2ed680-adeb-11eb-93dd-ce3b10dbd22b.png)
 
 변수이름엔 "JAVA_HOME"을 변수 값엔 JDK가 설치된 경로를 입력합니다.
 (파일 탐색기에서 해당 경로로 이동한 후 복사하여 붙이기를 추천합니다.)
 
+![Screen Shot 2021-05-05 at 9 44 44 PM](https://user-images.githubusercontent.com/22373060/117142946-4155e480-adeb-11eb-8ff9-3206cd416a94.png)
+
 "JAVA_HOME" 환경변수가 시스템 변수 영역에 추가된 것을 확인할 수 있습니다.
+
+![Screen Shot 2021-05-05 at 9 44 50 PM](https://user-images.githubusercontent.com/22373060/117142964-45820200-adeb-11eb-9634-c82f90a18472.png)
 
 같은 방법으로 "CLASSPATH" 환경변수를 추가합니다.
 값은 ".;%JAVA_HOME%\lib\tools.jar" 로 입력합니다.
 "%JAVA_HOME%"은 앞에서 설정한 JAVA_HOME 환경변수의 값으로 치환하라는 의미입니다.
 
+![Screen Shot 2021-05-05 at 9 44 55 PM](https://user-images.githubusercontent.com/22373060/117142988-4adf4c80-adeb-11eb-9b32-62d4ef358b1d.png)
+
 시스템 변수 영역에서 PATH를 찾아서 선택한 후 "편집" 버튼을 클릭한 후 위의 그림과 같은 창이 열리면 우측의 "새로 만들기" 버튼을 클릭한 후 "%JAVA_HOME%\bin"을 입력합니다.
+
+![Screen Shot 2021-05-05 at 9 46 12 PM](https://user-images.githubusercontent.com/22373060/117143022-5599e180-adeb-11eb-88bb-34b2c3378dc4.png)
 
 "윈도키 + R"을 입력하여 실행창이 열리도록 한 후, "cmd"라고 입력하고 엔터를 입력합니다.
 이 때 cmd 콘솔(console)창이 열리게 됩니다.
@@ -141,6 +169,8 @@ ls -la
 위에서 사용한 명령은 맥 터미널 명령입니다. ( 리눅스도 같은 명령을 사용할 수 있습니다. )
 필자의 경우 2가지 버전의 jdk가 설치되어 있기 때문에 jdk1.8.0_121.jdk 와 jdk1.8.0_91.jdk 2가지가 보입니다.
 처음 설치했다면 경로가 하나만 보일 것입니다.
+
+![Screen Shot 2021-05-05 at 9 46 40 PM](https://user-images.githubusercontent.com/22373060/117143104-68acb180-adeb-11eb-8104-b2f6f1749841.png)
 
 ```
 cd /Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home  
@@ -197,7 +227,9 @@ CLASSPATH로 현재 경로와 $JAVA_HOME/lib/tools.jar를 지정하라는 것을
 java -version
 ```
 
-결과가 출력된다면 설치가 잘 된 것입니다.
+아래의 그림과 같이 결과가 출력된다면 설치가 잘 된 것입니다.
+
+![Screen Shot 2021-05-05 at 9 47 04 PM](https://user-images.githubusercontent.com/22373060/117143141-77936400-adeb-11eb-84e4-f450df7c7ead.png)
 
 
 ## 간단한 JAVA 프로그램 컴파일 및 실행
@@ -251,15 +283,22 @@ IBM에서 웹 스피어 스튜디오 애플리케이션 디벨로퍼(WebSpheare 
 
 ## 이클립스 다운로드및 설치
 
+https://www.eclipse.org/downloads/packages/
+
 웹 브라우저로 이클립스 사이트에 접속합니다.
 하단에 있는 Packages 링크를 클릭합니다.
 
-이클립스 사이트
+![Screen Shot 2021-05-05 at 9 49 53 PM](https://user-images.githubusercontent.com/22373060/117143519-e2dd3600-adeb-11eb-95f4-2e515617c6d1.png)
+
+## 이클립스 사이트
+
 이클립스를 이용하여 자바 웹 어플리케이션을 개발할 때 사용하려면 "Eclipse IDE for Java EE Developers"를 다운로드 받아야 합니다.
 본인의 운영체제에 맞는 버전을 다운로드 받습니다.
 목록을 살펴보면 알겠지만, 다양한 이클립스 버전이 있는 것을 알 수 있습니다.
 Windows사용자는 자동으로 윈도우와 관련된 다운로드 링크가 보입니다.
 저는 64bit를 다운로드 받도록 하겠습니다.
+
+![Screen Shot 2021-05-05 at 9 49 58 PM](https://user-images.githubusercontent.com/22373060/117143622-fc7e7d80-adeb-11eb-8373-b1020e58f2a8.png)
 
 다운로드 링크를 클릭하여 다운로드 합니다.
 약 340메가 정도의 파일이 다운로드 됩니다.
@@ -269,11 +308,16 @@ Windows사용자는 자동으로 윈도우와 관련된 다운로드 링크가 �
 다운로드 받은 파일인 "eclipse-jee-oxygen-2-win32-x86_64.zip"의 압축을 해제합니다.
 압축을 해제하면 eclipse란 폴더가 있고, 그 안에는 아래 그림과 같은 파일들이 있는 것을 확인할 수 있습니다.
 
-이클립스 실행과 이클립스의 구성요소
+![Screen Shot 2021-05-05 at 9 51 30 PM](https://user-images.githubusercontent.com/22373060/117143722-191ab580-adec-11eb-9e79-8fc17fa0f5e7.png)
+
+## 이클립스 실행과 이클립스의 구성요소
+
 파일 중에서 eclipse.exe파일을 더블클릭하여 실행합니다.
 실행하면 다음과 같이 workspace경로를 물어보는 창이 열립니다.
 workspace란 이클립스로 관리하는 프로젝트가 저장되는 경로를 의미합니다.
 앞으로 이클립스로 개발하는 모든 내용이 저장되는 폴더라고 생각하면 됩니다.
+
+![Screen Shot 2021-05-05 at 9 51 34 PM](https://user-images.githubusercontent.com/22373060/117143757-20da5a00-adec-11eb-97f7-47d29fac6f2e.png)
 
 폴더를 지정한 후 "Lanuch"버튼을 클릭하면 버전에 따라서 모양이 약간 다르지만, 로그화면이 보여지면서 실행되게 됩니다.
 
@@ -281,8 +325,12 @@ workspace란 이클립스로 관리하는 프로젝트가 저장되는 경로를
 각 링크를 클릭하면서 내용을 살펴보세요.
 이클립스와 관련된 다양한 내용에 대하여 살펴볼 수 있을 것입니다.
 
+![Screen Shot 2021-05-05 at 9 52 16 PM](https://user-images.githubusercontent.com/22373060/117143802-2cc61c00-adec-11eb-8953-1fdb9da585fe.png)
+
 내용을 살펴보았다면, "Welcome" 탭의 X버튼을 클릭하여 해당 창을 닫습니다.
 창을 닫으면 아래의 그림과 같은 화면이 보여집니다.
+
+![Screen Shot 2021-05-05 at 9 52 29 PM](https://user-images.githubusercontent.com/22373060/117143825-35b6ed80-adec-11eb-9e43-b35d9a81fee3.png)
 
 이클립스를 다운로드 받을 때 보면, 다양한 종류의 이클립스가 있던 것을 볼 수 있었습니다.
 이클립스는 플러그인(Plugin)이란 구조로 만들어져 있습니다.
@@ -305,14 +353,28 @@ workspace란 이클립스로 관리하는 프로젝트가 저장되는 경로를
 이 과정에서는 UTF-8로 설정하도록 하겠습니다.
 아래와 같이 인코딩을 설정해 주세요.
 
+![Screen Shot 2021-05-05 at 9 52 46 PM](https://user-images.githubusercontent.com/22373060/117143866-41a2af80-adec-11eb-90d6-27c84eec9602.png)
+
 Window -> Preferences 메뉴를 클릭합니다.
+
+![Screen Shot 2021-05-05 at 9 52 50 PM](https://user-images.githubusercontent.com/22373060/117143883-449da000-adec-11eb-9437-37f0acd45ebd.png)
 
 Preferences 다이얼로그가 열리면, General -> Workspace 메뉴를 활성화하고, 하단의 Text file encoding 메뉴에서 Other 라디오버튼을 클릭하고 UTF-8 로 선택하고 Apply 버튼을 클릭합니다.
 이렇게 설정하면 주로 자바 파일들에 대한 기본 인코딩이 UTF-8 로 설정됩니다.
 
+![Screen Shot 2021-05-05 at 9 53 09 PM](https://user-images.githubusercontent.com/22373060/117143905-4c5d4480-adec-11eb-9acb-ee6ee0a7da2b.png)
+
 CSS Files
 좌측 메뉴에서 Web을 활성화해주고 CSS Files 메뉴를 클릭하면 우측 메뉴가 바뀌는데 우측의 Encoding 항목에서 UTF-8을 선택하고 Apply 버튼을 눌러줍니다.
 같은 방법으로 HTML Files, JSP Files 의 인코딩 설정도 바꿔줍니다.
+
+![Screen Shot 2021-05-05 at 9 53 23 PM](https://user-images.githubusercontent.com/22373060/117143964-5717d980-adec-11eb-8e55-b26b800fc8fe.png)
+
+HTML Files
+
+![Screen Shot 2021-05-05 at 9 53 28 PM](https://user-images.githubusercontent.com/22373060/117143987-6008ab00-adec-11eb-9204-ee02f576ddf4.png)
+
+JSP Files
 
 
 # 4.4 HelloWorld 컴파일하고 실행하기
@@ -360,10 +422,16 @@ Tomcat 8버전은 JDK 7이상에서 동작하며 Servlet Spec 3.1을 지원합�
 Tomcat 9버전은 JDK 8이상에서 동작하며 Servlet Spec 4.0을 지원합니다.
 좌측 "Download"메뉴 아래에 있는 "Tomcat 8"링크를 클릭합니다.
 
+![Screen Shot 2021-05-05 at 9 54 21 PM](https://user-images.githubusercontent.com/22373060/117144139-8d555900-adec-11eb-97b7-765b86a02547.png)
+
 8.5.24 버전의 zip파일을 다운로드 합니다. (MAC OS 사용자는 tar.gz 파일을 다운로드 합니다.)
 다운로드 받은 파일을 압축 해제합니다.
 
+![Screen Shot 2021-05-05 at 9 54 31 PM](https://user-images.githubusercontent.com/22373060/117144150-90e8e000-adec-11eb-8dc6-3e0ae49484e5.png)
+
 압축을 해제하면 다음과 같은 파일과 폴더들이 있는 것을 확인할 수 있습니다.
+
+![Screen Shot 2021-05-05 at 9 54 34 PM](https://user-images.githubusercontent.com/22373060/117144164-93e3d080-adec-11eb-9359-c2d71472b800.png)
 
 Apach Tomcat 실행
 아파치 톰캣 설치 폴더 아래에 있는 bin폴더를 보면 확장자가 bat인 윈도우용 배치파일과 확장자가 sh인 쉘스크립트(shell script)파일이 있는 것을 확인할 수 있습니다.
@@ -453,22 +521,28 @@ sudo ./bin/startup.sh
 
 - 쉘 파일의 실행 권한을 주고 서버를 실행 했음에도 http://localhost:8080/ 로 접근이 되지 않을 때 sudo 명령어를 통해 서버를 시작해야 합니다.
 
+![Screen Shot 2021-05-05 at 9 54 41 PM](https://user-images.githubusercontent.com/22373060/117144186-9a724800-adec-11eb-8a10-5f7e66593d81.png)
+
 콘솔창이 열리면서 다음과 같이 실행되는 것을 알 수 있습니다.
 tomcat은 기본적으로 8080포트로 실행됩니다.
 실행된 화면을 보면 "http-nio-8080"이라는 문자열을 볼 수 있는데 8080으로 실행되는 것을 표현하고 있는 것입니다.
 tomcat설정파일을 수정함으로써 실행되는 포트를 바꿀 수 있습니다.
 앞에서도 설명했지만, 컴퓨터를 구분하기 위해서 사용되는 것이 도메인이나 ip이고, 컴퓨터에 설치되어 있는 여러개의 소프트웨어 서버를 구분하기 위해 사용되는 값이 포트(port)라고 하였습니다.
 
+![Screen Shot 2021-05-05 at 9 54 45 PM](https://user-images.githubusercontent.com/22373060/117144204-9fcf9280-adec-11eb-8a9c-2478624e862e.png)
+
 웹 브라우저를 실행한 후 주소창에 http://localhost:8080 나 http://127.0.0.1:8080 으로 입력해 보도록 하겠습니다.
 localhost는 현재 사용중인 컴퓨터를 나타내는 도메인(domain)주소이고 127.0.0.1은 현재 사용 중인 컴퓨터를 나타내는 ip주소입니다.
 웹 브라우저로 현재 컴퓨터에서 8080포트로 동작하는 서버에 접속하라는 의미입니다.
 Tomcat이 기본으로 제공하는 웹 사이트가 보여지는 것을 확인할 수 있습니다.
 
+![Screen Shot 2021-05-05 at 9 54 50 PM](https://user-images.githubusercontent.com/22373060/117144222-a4944680-adec-11eb-9fd8-bd2dcdbc299b.png)
+
 아파치 톰켓 설치 폴더 아래의 bin폴더에 있는 shutdown.bat파일이나 shutdown.sh파일을 더블클릭하여 실행하면 아파치 톰캣이 종료됩니다.
 혹은, 실행 중인 창을 닫아도 아파치 톰캣은 종료됩니다.
 아파치 톰켓이 종료 된 후 http://localhost:8080으로 다시 접속해보면, 아래의 그림과 같이 오류 화면이 보여지는 것을 확인할 수 있습니다.
 
-이번 학습에서는 아파치 톰캣을 설치하고, 실행해 보았습니다.
+![Screen Shot 2021-05-05 at 9 54 56 PM](https://user-images.githubusercontent.com/22373060/117144232-a78f3700-adec-11eb-8e4e-4372361d5014.png)
 
 
 # 4.6 HelloWorld 서블릿 컴파일 및 실행하기
