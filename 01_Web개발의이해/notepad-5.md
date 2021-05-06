@@ -201,7 +201,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import java.io.PrintWriter;
 
 @WebServlet("/LifecycleServlet")
 public class LifecycleServlet extends HttpServlet {
@@ -273,3 +273,211 @@ HttpServlet의 service메소드는 템플릿 메소드 패턴으로 구현합니
 
 
 # 5.4 Request, Response 객체 이해하기
+
+![Screen Shot 2021-05-06 at 4 47 21 PM](https://user-images.githubusercontent.com/22373060/117261134-c217ed80-ae8a-11eb-9811-41ed4ea5265a.png)
+
+요청과 응답
+
+## 요청과 응답
+
+WAS는 웹 브라우저로부터 Servlet요청을 받으면,
+
+* 요청할 때 가지고 있는 정보를 HttpServletRequest객체를 생성하여 저장합니다.
+* 웹 브라우저에게 응답을 보낼 때 사용하기 위하여 HttpServletResponse객체를 생성합니다.
+* 생성된 HttpServletRequest, HttpServletResponse 객체를 서블릿에게 전달합니다.
+ 
+## HttpServletRequest
+
+* http프로토콜의 request정보를 서블릿에게 전달하기 위한 목적으로 사용합니다.
+* 헤더정보, 파라미터, 쿠키, URI, URL 등의 정보를 읽어 들이는 메소드를 가지고 있습니다.
+* Body의 Stream을 읽어 들이는 메소드를 가지고 있습니다.
+
+## HttpServletResponse
+
+* WAS는 어떤 클라이언트가 요청을 보냈는지 알고 있고, 해당 클라이언트에게 응답을 보내기 위한 HttpServleResponse객체를 생성하여 서블릿에게 전달합니다.
+* 서블릿은 해당 객체를 이용하여 content type, 응답코드, 응답 메시지등을 전송합니다.
+
+## 실습코드
+
+HeaderServlet.java
+
+```
+package examples;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Enumeration;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class HeaderServlet
+ */
+@WebServlet("/header")
+public class HeaderServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public HeaderServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<html>");
+		out.println("<head><title>form</title></head>");
+		out.println("<body>");
+
+		Enumeration<String> headerNames = request.getHeaderNames();
+		while(headerNames.hasMoreElements()) {
+			String headerName = headerNames.nextElement();
+			String headerValue = request.getHeader(headerName);
+			out.println(headerName + " : " + headerValue + " <br> ");
+		}		
+		
+		out.println("</body>");
+		out.println("</html>");
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}
+```
+
+## 실습코드
+
+ParameterServlet.java
+
+```
+package examples;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ParameterServlet
+ */
+@WebServlet("/param")
+public class ParameterServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ParameterServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<html>");
+		out.println("<head><title>form</title></head>");
+		out.println("<body>");
+
+		String name = request.getParameter("name");
+		String age = request.getParameter("age");
+		
+		out.println("name : " + name + "<br>");
+		out.println("age : " +age + "<br>");
+		
+		out.println("</body>");
+		out.println("</html>");
+	}
+
+}
+```
+
+e.g. url = localhost:8080/firstweb/param?name=ddd&age=99
+     result = name : ddd, age : 99
+
+## 실습코드
+
+InfoServlet.java
+
+```
+package examples;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class InfoServlet
+ */
+@WebServlet("/info")
+public class InfoServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public InfoServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<html>");
+		out.println("<head><title>info</title></head>");
+		out.println("<body>");
+
+		String uri = request.getRequestURI();
+		StringBuffer url = request.getRequestURL();
+		String contentPath = request.getContextPath();
+		String remoteAddr = request.getRemoteAddr();
+		
+		
+		out.println("uri : " + uri + "<br>");
+		out.println("url : " + url + "<br>");
+		out.println("contentPath : " + contentPath + "<br>");
+		out.println("remoteAddr : " + remoteAddr + "<br>");
+		
+		out.println("</body>");
+		out.println("</html>");
+	}
+
+
+}
+```
+
+### 참고자료 
+
+HTTP headers - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
