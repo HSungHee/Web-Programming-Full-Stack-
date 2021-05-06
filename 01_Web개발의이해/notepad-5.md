@@ -254,6 +254,10 @@ public class LifecycleServlet extends HttpServlet {
 }
 ```
 
+![4](https://user-images.githubusercontent.com/22373060/117265482-3fddf800-ae8f-11eb-807e-736dade06b66.JPG)
+
+![5](https://user-images.githubusercontent.com/22373060/117265489-41a7bb80-ae8f-11eb-936e-d515196c5e4c.JPG)
+
 ## service(request, response) 메소드
 
 HttpServlet의 service메소드는 템플릿 메소드 패턴으로 구현합니다.
@@ -415,8 +419,9 @@ public class ParameterServlet extends HttpServlet {
 }
 ```
 
-e.g. url = localhost:8080/firstweb/param?name=ddd&age=99
-     result = name : ddd, age : 99
+![1](https://user-images.githubusercontent.com/22373060/117265339-18872b00-ae8f-11eb-8305-13f8668df2ed.JPG)
+
+![2](https://user-images.githubusercontent.com/22373060/117265360-1e7d0c00-ae8f-11eb-8861-1bc95de1c3e1.JPG)
 
 ## 실습코드
 
@@ -477,6 +482,8 @@ public class InfoServlet extends HttpServlet {
 
 }
 ```
+
+![캡처](https://user-images.githubusercontent.com/22373060/117265301-0f965980-ae8f-11eb-95d0-e8906a360779.JPG)
 
 ### 참고자료 
 
