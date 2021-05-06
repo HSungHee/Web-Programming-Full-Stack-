@@ -23,11 +23,253 @@ WAS에 설치(deploy)되어 동작하는 어플리케이션입니다.
 
 # 5.2 Servlet 작성 방법
 
+## 버전에 따른 Servlet 작성 방법
 
+1. Servlet 3.0 spec 이상에서 사용하는 방법
+
+* web.xml 파일을 사용하지 않습니다.
+* 자바 어노테이션(annotation)을 사용합니다.
+* 앞에서 실습했던 first web에서 사용합니다.
+
+2. Servlet 3.0 spec미만에서 사용하는 방법
+
+* servlet을 등록할 때 web.xml 파일에 등록합니다.
+
+## 실습코드
+
+TenServlet.java
+
+```
+package examples;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class TenServlet
+ */
+@WebServlet("/ten")
+public class TenServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public TenServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		out.print("<h1>1부터 10까지 출력합니다.<h1>");
+		for(int i = 1; i<=10; i++) {
+			out.print(i+"<br>");
+		}
+		out.close();
+	}
+
+}
+```
+
+## 실습코드
+
+web.xml
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://java.sun.com/xml/ns/javaee" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+version="2.5">
+    <display-name>exam25</display-name>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <description></description>
+        <display-name>TenServlet</display-name>
+        <servlet-name>TenServlet</servlet-name>
+        <servlet-class>exam.TenServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TenServlet</servlet-name>
+        <url-pattern>/ttt</url-pattern>
+    </servlet-mapping>
+</web-app>
+```
 
 
 # 5.3 Servlet 라이프 사이클
 
+## LifecycleServlet
+
+HttpServlet의 3가지 메소드를 오버라이딩
+
+* init()
+* service(request, response)
+* destroy()
+
+## 실습코드
+
+LifecycleServlet.java
+
+```
+package examples;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/LifecycleServlet")
+public class LifecycleServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+ 
+    public LifecycleServlet() {
+        System.out.println("LifecycleServlet 생성!!");
+    }
+
+	public void init(ServletConfig config) throws ServletException {
+		System.out.println("init test 호출!!");
+	}
+
+	
+	public void destroy() {
+		System.out.println("destroy 호출!!");
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+       {
+		System.out.println("service호출!!");		
+	}
+	
+}
+```
+
+![Screen Shot 2021-05-06 at 4 22 58 PM](https://user-images.githubusercontent.com/22373060/117257888-55e7ba80-ae87-11eb-99e7-d9300c89dc00.png)
+
+Servlet
+
+## Servlet 생명주기
+
+* WAS는 서블릿 요청을 받으면 해당 서블릿이 메모리에 있는지 확인합니다.
+* if (메모리에 없음) {
+ - 해당 서블릿 클래스를 메모리에 올림
+ - init() 메소드를 실행
+}
+ - service()메소드를 실행
+* was가 종료되거나, 웹 어플리케이션이 새롭게 갱신될 경우 destroy() 메소드가 실행됩니다.
+
+## 실습코드
+
+LifecycleServlet.java
+
+```
+package examples;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/LifecycleServlet")
+public class LifecycleServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+ 
+    public LifecycleServlet() {
+        System.out.println("LifecycleServlet 생성!!");
+    }
+
+	public void init(ServletConfig config) throws ServletException {
+		System.out.println("init test 호출!!");
+	}
+
+	
+	public void destroy() {
+		System.out.println("destroy 호출!!");
+	}
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		out.println("<html>");
+		out.println("<head><title>form</title></head>");
+		out.println("<body>");
+		out.println("<form method='post' action='/firstweb/LifecycleServlet'>");
+		out.println("name : <input type='text' name='name'><br>");
+		out.println("<input type='submit' value='ok'><br>");                                                 
+		out.println("</form>");
+		out.println("</body>");
+		out.println("</html>");
+		out.close();
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		String name = request.getParameter("name");
+		out.println("<h1> hello " + name + "</h1>");
+		out.close();
+	}
+
+//	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		System.out.println("service 호출!!");
+//	}
+//	
+	
+
+}
+```
+
+## service(request, response) 메소드
+
+HttpServlet의 service메소드는 템플릿 메소드 패턴으로 구현합니다.
+
+* 클라이언트의 요청이 GET일 경우에는 자신이 가지고 있는 doGet(request, response)메소드를 호출
+* 클라이언트의 요청이 Post일 경우에는 자신이 가지고 있는 doPost(request, response)를 호출
+ 
+## LifecycleServlet 수정 실습
+
+* Service(request, response)메소드 주석처리
+* HttpServlet의 doGet(request, response)메소드 오버라이딩
+* HttpServlet의 doPost(request, response)메소드 오버라이딩
+
+### 참고자료
+
+템플릿 메소드 패턴 - http://jdm.kr/blog/116
 
 
 # 5.4 Request, Response 객체 이해하기
